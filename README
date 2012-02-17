@@ -1,0 +1,9 @@
+Solve MathML inefficiently by using string substitutions as follows:
+
+1. stripping all whitespaces
+2. finding atomar apply nodes, if none found stop
+3. evaluating the atomar apply nodes
+4. replacing the atomar apply nodes with the calculation result
+5. jump to 2
+
+Don't use this algorithm in productive code :-)
