@@ -33,4 +33,4 @@ UI_DIR = build/ui
 #unix:QMAKE_RPATHDIR += lib
 #unix:LIBS += -Llib -lreformath
 
-include(3rd-party/qtmmlwidget-2.4_1-opensource/src/qtmmlwidget.pri)
+include(qtmmlwidget-2.4_1-opensource/src/qtmmlwidget.pri)

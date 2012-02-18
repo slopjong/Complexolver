@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>439</width>
-    <height>501</height>
+    <width>395</width>
+    <height>398</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,35 +26,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Presentation:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlpresentation_1">
-          <property name="plainText">
-           <string>&lt;math&gt;
-  &lt;mrow&gt;
-    &lt;msup&gt;
-      &lt;mn&gt;2&lt;/mn&gt;
-      &lt;mn&gt;3&lt;/mn&gt;
-    &lt;/msup&gt;
-  &lt;/mrow&gt;
-&lt;/math&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Content:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlcontent_1">
+         <widget class="QPlainTextEdit" name="plainTextEdit">
           <property name="plainText">
            <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
 &lt;apply&gt;
@@ -74,37 +46,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Presentation:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlpresentation_2">
-          <property name="plainText">
-           <string>&lt;math&gt;
-  &lt;mrow&gt;
-    &lt;msup&gt;
-      &lt;mn&gt;2&lt;/mn&gt;
-      &lt;mn&gt;3&lt;/mn&gt;
-    &lt;/msup&gt;
-    &lt;mo&gt;+&lt;/mo&gt;
-    &lt;mn&gt;5&lt;/mn&gt;
-  &lt;/mrow&gt;
-&lt;/math&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Content:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlcontent_2">
+         <widget class="QPlainTextEdit" name="plainTextEdit_2">
           <property name="plainText">
            <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
 &lt;apply&gt;
@@ -128,39 +70,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Presentation:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlpresentation_3">
-          <property name="plainText">
-           <string>&lt;math&gt;
-  &lt;mrow&gt;
-    &lt;msup&gt;
-      &lt;mn&gt;2&lt;/mn&gt;
-      &lt;mn&gt;3&lt;/mn&gt;
-    &lt;/msup&gt;
-    &lt;mo&gt;+&lt;/mo&gt;
-    &lt;mn&gt;5&lt;/mn&gt;
-    &lt;mo&gt;*&lt;/mo&gt;
-    &lt;mn&gt;2&lt;/mn&gt;
-  &lt;/mrow&gt;
-&lt;/math&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Content:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="mlcontent_3">
+         <widget class="QPlainTextEdit" name="plainTextEdit_3">
           <property name="plainText">
            <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
 &lt;math&gt;
@@ -186,23 +96,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="formulaWidget">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="solveButton">
+     <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>Solve</string>
       </property>
@@ -215,8 +109,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>439</width>
-     <height>23</height>
+     <width>395</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
