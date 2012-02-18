@@ -12,10 +12,14 @@ TEMPLATE = app
 include(3rd-party/qtmmlwidget-2.4_1-opensource/src/qtmmlwidget.pri)
 include(3rd-party/tinyxml/tinyxml.pri)
 
-SOURCES += src/main.cpp\
-        src/mainwindow.cpp
+SOURCES += \
+		#src/testSolver.cpp \
+		src/main.cpp \
+        src/mainwindow.cpp \
+		src/mathsolver.cpp
 
-HEADERS  += src/mainwindow.h
+HEADERS  += src/mainwindow.h \
+    src/mathsolver.h
 
 FORMS    += src/ui/mainwindow.ui
 
