@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>395</width>
+    <height>398</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>2^3</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit">
+          <property name="plainText">
+           <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
+&lt;apply&gt;
+  &lt;power/&gt;
+  &lt;cn&gt;2&lt;/cn&gt;
+  &lt;cn&gt;3&lt;/cn&gt;
+&lt;/apply&gt;
+&lt;/math&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>(2^3)+5</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_2">
+          <property name="plainText">
+           <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
+&lt;apply&gt;
+  &lt;plus/&gt;
+  &lt;apply&gt;
+    &lt;power/&gt;
+    &lt;cn&gt;2&lt;/cn&gt;
+    &lt;cn&gt;3&lt;/cn&gt;
+  &lt;apply&gt;
+  &lt;cn&gt;5&lt;/cn&gt;
+&lt;/apply&gt;
+&lt;/math&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>(2^3)+(5*2)</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_3">
+          <property name="plainText">
+           <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
+&lt;math&gt;
+&lt;apply&gt;
+  &lt;plus/&gt;
+  &lt;apply&gt;
+    &lt;power/&gt;
+    &lt;cn&gt;2&lt;/cn&gt;
+    &lt;cn&gt;3&lt;/cn&gt;
+  &lt;apply&gt;
+  &lt;apply&gt;
+    &lt;times/&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+    &lt;cn&gt;2&lt;/cn&gt;
+  &lt;apply&gt;
+&lt;/apply&gt;
+&lt;/math&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Solve</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>395</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
