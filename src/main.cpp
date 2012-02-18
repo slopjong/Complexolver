@@ -60,6 +60,18 @@ double compute(TiXmlNode *node)
 		return sum;
 	}
 
+	// can process as many arguments as possible
+	if("times" == type){
+		double multiplication = 1;
+		for(TiXmlNode *multarg=child->NextSibling();
+			multarg; multarg=multarg->NextSibling())
+		{
+			multiplication *= compute(multarg);
+		}
+
+		return multiplication;
+	}
+
 	return 0;
 }
 
@@ -97,7 +109,24 @@ int main(int argc, char *argv[])
 						"  </apply>"
 						"</math>";
 
-	QByteArray mathml = _mathml2.toLocal8Bit();
+	QString _mathml3 =	"<math xmlns=\"http://www.w3.org/1998/Math/MathML\">"
+						"  <apply>"
+						"    <plus/>"
+						"    <apply>"
+						"      <power/>"
+						"      <cn>2</cn>"
+						"      <cn>3</cn>"
+						"    </apply>"
+						"    <apply>"
+						"      <times/>"
+						"      <cn>5</cn>"
+						"      <cn>2</cn>"
+						"      <cn>3</cn>"
+						"    </apply>"
+						"  </apply>"
+						"</math>";
+
+	QByteArray mathml = _mathml3.toLocal8Bit();
 
 	TiXmlDocument doc;
 	doc.Parse(mathml.constData());
