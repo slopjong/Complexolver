@@ -29,7 +29,8 @@ UI_DIR = build/ui
 #QMAKE_CXXFLAGS += -std=gnu++0x
 #QMAKE_CXXFLAGS += -Wno-unused-variable -Wno-unused-parameter
 
-unix:INCLUDEPATH += include
-unix:QMAKE_RPATHDIR += lib
-unix:LIBS += -Llib -lreformath
+#unix:INCLUDEPATH += include
+#unix:QMAKE_RPATHDIR += lib
+#unix:LIBS += -Llib -lreformath
 
+include(qtmmlwidget-2.4_1-opensource/src/qtmmlwidget.pri)
