@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtMmlWidget>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,15 @@ public:
     
 private:
     Ui::MainWindow *ui;
+	QtMmlWidget *mmlWidget;
+
+	QString getMathML(QString provider);
+
+private slots:
+	void solveButtonClicked();
+	void renderML();
 };
+
+void showWarning(const QString &msg);
 
 #endif // MAINWINDOW_H
