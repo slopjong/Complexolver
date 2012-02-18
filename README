@@ -7,3 +7,8 @@ Solve MathML inefficiently by using string substitutions as follows:
 5. jump to 2
 
 Don't use this algorithm in productive code :-)
+
+Update:
+-------
+Finally I don't use string substitutions but process the formular
+recursively and thus nothing became as inefficient as I claimed.
