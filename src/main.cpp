@@ -4,53 +4,60 @@
 #include "tinyxml.h"
 #include "tinystr.h"
 #include <QtGui/QMessageBox>
+#include <qmath.h>
 
-bool isAtomarApply(TiXmlElement *node)
-{
-	for( TiXmlElement *element = node->FirstChildElement();
-		 element;
-		 element = element->NextSiblingElement() )
-	{
-		QString node_name = element->Value();
-		if("apply"== node_name)
-			return false;
-	}
-
-	return true;
-}
-
-bool isApplyNode(TiXmlNode *node){
-
-	switch(node->Type()){
-		case TiXmlNode::TINYXML_ELEMENT:	qDebug() << "Type: Element"; break;
-		case TiXmlNode::TINYXML_TEXT:	qDebug() << "Type: Element"; break;
-		default:
-			qDebug() << "Type is unknown";
-	}
-
-	QString node_name = node->Value();
-	if("apply"== node_name)
-		return true;
-	return false;
-}
-
-int compute(TiXmlNode *node)
+double compute(TiXmlNode *node)
 {
 	if(!node)
 		qDebug() << "The node is null";
 
-	// if the node is no apply node return the value
-	if(!isApplyNode(node)){
-		TiXmlNode *text = node->FirstChild();
+	TiXmlNode *child = node->FirstChild();
+
+	QString type = child->Value();
+	qDebug() << "The node type is:" << type;
+
+	/********************************************************/
+	// if numerical type, return the scalar
+
+	if("cn" == type){
+		TiXmlNode *text = child->FirstChild();
 		if(!text)
 			return 0;
 
-		QString t = node->FirstChild()->Value();
-		return t.toInt();
+		QString t = child->FirstChild()->Value();
+		return t.toDouble();
+	}
+	// TODO: make the regex available somewhere else to reduce
+	// avoid multiple object creation
+	QRegExp re("^[0-9]+\.?[0-9]*");
+	if(type.contains(re))
+		return type.toDouble(); // in this case type is the scalar
+
+	/********************************************************/
+	// if function, process it
+
+	if("apply" == type){
+		return compute(child);
 	}
 
-	if(isAtomarApply(node)){
+	/********************************************************/
 
+	if("power" == type){
+		double base = compute(child->NextSibling());
+		double exp = compute(child->NextSibling()->NextSibling());
+		return qPow(base, exp);
+	}
+
+	// can process as many arguments as possible
+	if("plus" == type){
+		double sum = 0;
+		for(TiXmlNode *summand=child->NextSibling();
+			summand; summand=summand->NextSibling())
+		{
+			sum += compute(summand);
+		}
+
+		return sum;
 	}
 
 	return 0;
@@ -72,8 +79,8 @@ int main(int argc, char *argv[])
 	QString _mathml1 =	"<math xmlns=\"http://www.w3.org/1998/Math/MathML\">"
 						"  <apply>"
 						"    <power/>"
-						"      <cn>2</cn>"
-						"      <cn>3</cn>"
+						"      <cn>2.1</cn>"
+						"      <cn>3.3</cn>"
 						"  </apply>"
 						"</math>";
 
@@ -86,10 +93,11 @@ int main(int argc, char *argv[])
 						"      <cn>3</cn>"
 						"    </apply>"
 						"    <cn>5</cn>"
+						"    <cn>1</cn>"
 						"  </apply>"
 						"</math>";
 
-	QByteArray mathml = _mathml0.toLocal8Bit();
+	QByteArray mathml = _mathml2.toLocal8Bit();
 
 	TiXmlDocument doc;
 	doc.Parse(mathml.constData());
@@ -109,15 +117,6 @@ int main(int argc, char *argv[])
 		qDebug() << "There is no mathematics";
 	}
 	else{
-		//TiXmlNode * math->FirstChild();// FirstChild("apply");
-		//TiXmlElement *formula = math->FirstChild("apply")->ToElement();
-		qDebug() << compute(math->FirstChild());
-		/*
-		if(formula)
-			qDebug() << compute(formula);
-		else
-			// in this case math is a scalar
-			qDebug() << compute(math);
-		//*/
+		qDebug() << compute(math);
 	}
 }
