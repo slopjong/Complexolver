@@ -26,10 +26,11 @@ double MathSolver::compute(QString mathml)
 
 	TiXmlNode *math = docHandle.FirstChild("math").ToNode();
 	if(!math){
+		// please never let this happen
 		qDebug() << "There is no mathematics";
 	}
 	else{
-		qDebug() << MathSolver::_compute(math);
+		return MathSolver::_compute(math);
 	}
 }
 

@@ -28,5 +28,6 @@ private slots:
 };
 
 void showWarning(const QString &msg);
+void showInfo(const QString &msg);
 
 #endif // MAINWINDOW_H

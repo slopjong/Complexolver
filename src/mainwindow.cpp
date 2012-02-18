@@ -3,10 +3,19 @@
 #include "ui_mainwindow.h"
 #include <QRegExp>
 #include <QMessageBox>
+#include "mathsolver.h"
 
 void showWarning(const QString &msg)
 {
 	QMessageBox::warning(0, "Warning", msg,
+							QMessageBox::Ok,
+							QMessageBox::NoButton,
+							QMessageBox::NoButton);
+}
+
+void showInfo(const QString &msg)
+{
+	QMessageBox::information(0, "Computation result", msg,
 							QMessageBox::Ok,
 							QMessageBox::NoButton,
 							QMessageBox::NoButton);
@@ -46,7 +55,7 @@ MainWindow::~MainWindow()
 QString MainWindow::getMathML(QString provider)
 {
 	QWidget *tab = ui->tabWidget->currentWidget();
-	const QString pattern = "mlpresentation.*";
+	const QString pattern = "ml" + provider + ".*";
 	const QRegExp re(pattern);
 	QList<QPlainTextEdit*> list = tab->findChildren<QPlainTextEdit *>(re);
 
@@ -66,7 +75,9 @@ QString MainWindow::getMathML(QString provider)
  */
 void MainWindow::solveButtonClicked()
 {
-
+	QString mathml = getMathML("content");
+	double result = MathSolver::compute(mathml);
+	showInfo(QString("%1").arg(result));
 }
 
 /**

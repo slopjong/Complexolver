@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Complexolver</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -113,7 +113,7 @@
     &lt;power/&gt;
     &lt;cn&gt;2&lt;/cn&gt;
     &lt;cn&gt;3&lt;/cn&gt;
-  &lt;apply&gt;
+  &lt;/apply&gt;
   &lt;cn&gt;5&lt;/cn&gt;
 &lt;/apply&gt;
 &lt;/math&gt;</string>
@@ -163,19 +163,18 @@
          <widget class="QPlainTextEdit" name="mlcontent_3">
           <property name="plainText">
            <string>&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
-&lt;math&gt;
 &lt;apply&gt;
   &lt;plus/&gt;
   &lt;apply&gt;
     &lt;power/&gt;
     &lt;cn&gt;2&lt;/cn&gt;
     &lt;cn&gt;3&lt;/cn&gt;
-  &lt;apply&gt;
+  &lt;/apply&gt;
   &lt;apply&gt;
     &lt;times/&gt;
     &lt;cn&gt;5&lt;/cn&gt;
     &lt;cn&gt;2&lt;/cn&gt;
-  &lt;apply&gt;
+  &lt;/apply&gt;
 &lt;/apply&gt;
 &lt;/math&gt;</string>
           </property>
