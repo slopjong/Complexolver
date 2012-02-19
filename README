@@ -1,23 +1,30 @@
 Solve MathML inefficiently by using string substitutions as follows:
 
 1. stripping all whitespaces
-2. finding atomar apply nodes, if none found stop
+2. finding atomar apply nodes, if none found found
 3. evaluating the atomar apply nodes
-4. replacing the atomar apply nodes with the calculation result
+4. replacing the atomar apply nodes in the XML text with the calculation result
 5. jump to 2
 
 Don't use this algorithm in productive code :-)
 
 Update:
---------
-Finally I don't use string substitutions but process the formular
+------------
+Finally I don't use string substitutions but process the formula
 recursively and thus nothing became as inefficient as I claimed.
+
+
+
+Dependencies:
+------------
+Qt
 
 
 Compile:
 --------
 qmake
 make
+
 
 
 Run:
